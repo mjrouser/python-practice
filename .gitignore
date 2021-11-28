@@ -6,3 +6,4 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 __pycache__
+assignments/
