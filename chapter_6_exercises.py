@@ -15,11 +15,26 @@
 
 #Exercise 3
 
-word = 'banana'
-def count ():
-    increment = 0
-    for letter in word:
-        if letter == 'a':
-            increment = increment +1
-    print(increment)
-count()
+#word = 'banana'
+#letter = 'a'
+#def count ():
+#    increment = 0
+#    for x in word:
+#        if x == letter:
+#            increment = increment +1
+#    print(increment)
+#count()
+
+#Exercise 4
+
+#string = 'banana'
+#print(string.count('a'))
+
+#Exercise 5
+
+str = 'X-DSPAM-Confidence:0.8475'
+digstart = str.find(':')
+digits = str[digstart+1:]
+print(float(digits))
+
+#Exercise 6
