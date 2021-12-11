@@ -36,5 +36,3 @@ str = 'X-DSPAM-Confidence:0.8475'
 digstart = str.find(':')
 digits = str[digstart+1:]
 print(float(digits))
-
-#Exercise 6
