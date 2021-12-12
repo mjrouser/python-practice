@@ -113,6 +113,3 @@ def maxMin():
             print('Please enter numbers only')
 
 #maxMin()
-fruit = 'Banana'
-fruit[0] = 'b'
-print(fruit)
