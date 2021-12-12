@@ -43,7 +43,7 @@ def middle2(z):
 #chop2(newList)
 #chop2(newList2)
 
-
+#Exercises 2&3
 
 def fromFunc():
     fhand = open('mbox-test.txt')
@@ -54,6 +54,7 @@ def fromFunc():
         print(words[2])
 #fromFunc()
 
+#Exercise 4
 
 def romeo():
     finalWords = []
@@ -69,6 +70,8 @@ def romeo():
 
 #romeo()
 
+#Exercise 5
+
 def mboxFunc():
     mboxFhand = open('mbox-short.txt')
     count = 0
@@ -81,6 +84,8 @@ def mboxFunc():
     print('There were', count, 'lines in the file that started with From as the first word')
         
 #mboxFunc()
+
+#Exercise 6 
 
 def maxMin():
     numberList = []
