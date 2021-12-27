@@ -34,4 +34,54 @@ def regSumFunc():
             sum = sum + number
     avg = sum/count
     print(sum, int(avg))
-regSumFunc()
+#regSumFunc()
+
+#Autograder exercise 1
+
+def regexAutoGrader():
+    import re
+    fhanndle = open('egex_sum_1422630.txt')
+
+    sum = 0 
+
+    for line in fhanndle:
+        line.rstrip()
+        if len(line) > 0:
+            if re.search('([0-9]\d*)', line):
+                #print('Debug: ',line)
+                extractNumber = re.findall('([0-9]\d*)', line)
+                #print('Debug extractNumber: ', extractNumber)
+                for num in extractNumber:
+                    num2 = num.strip()
+                    #print('Debug num2: ',num2)
+                    num3 = int(num2)
+                    sum = sum + num3
+    print(sum)
+
+#regexAutoGrader()
+
+def regexAutoGrader2():
+    import re
+    fhandle = open('regex_sum_42.txt')
+    sum = 0 
+    newList = [int(i) for i in re.findall('([0-9]\d*)',fhandle.read())]
+    newList2 = newList
+    sumNewList = sum(newList2)
+    print(newList)
+    print(sumNewList)
+
+#    if re.search('([0-9]\d*)', line):
+#           extractNumber = re.findall('([0-9]\d*)', line)
+#           for num in extractNumber:
+#                num2 = num.strip()
+#                num3 = int(num2)
+#               sum = sum + num3
+    print(sum)
+
+regexAutoGrader2()
+
+#Bonus
+
+
+import re
+#print( sum( [ int[i] for i in re.findall('[0-9]+',open('regex_sum_42.txt').read()) ] ) )
