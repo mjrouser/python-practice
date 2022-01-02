@@ -83,21 +83,68 @@ def ex2():
     print(cmd)
     mysock.send(cmd)
 
+    countData = []
+    
 
     while True:
         data = mysock.recv(512)
         if len(data) < 1:
             break
-        countData = data.decode()
-        print('Debug count: ', countData)
+        countData.append(data.decode())
+        #countDataLen = len(countData)
         #sliceSize = slice(2999)
         scrData = countData[:2999]
 
-
-
-        print(scrData, len(countData), end='')
+        print(data[:2999].decode(), end='')
+       #print('Debug count: ', countData)
 
     mysock.close()
+    #print(countData)
+    countDataString =  ''.join(countData)
+    print(len(countDataString))
+
+#ex2()
+
+
+#Exercise 3
+
+def ex3():
+
+    import socket
+    import urllib.parse
+
+
+    siteQuery = input('Enter the site you want to call:')
+    urlParsing = urllib.parse.urlparse(siteQuery)
+
+
+    print(urlParsing)
+    print(urlParsing.hostname)
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    mysock.connect((urlParsing.hostname, 80))
+    urlString = 'GET ' + siteQuery + ' HTTP/1.0\r\n\r\n'
+    print('Debug: ', urlString)
+    cmd = urlString.encode()
+    print(cmd)
+    mysock.send(cmd)
+
+    countData = []
     
 
-ex2()
+    while True:
+        data = mysock.recv(512)
+        if len(data) < 1:
+            break
+        countData.append(data.decode())
+        #scrData = countData[:2999]
+
+        #print(data[:2999].decode(), end='')
+       
+
+    mysock.close()
+    #print(countData)
+    countDataString =  ''.join(countData)
+    print(countDataString[:2999])
+    print('Total characters: ', len(countDataString))
+
+ex3()
